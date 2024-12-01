@@ -32,8 +32,8 @@
 			label1 = new Label();
 			label2 = new Label();
 			tableLayoutPanel2 = new TableLayoutPanel();
-			button1 = new Button();
 			button2 = new Button();
+			listBox1 = new ListBox();
 			tableLayoutPanel1.SuspendLayout();
 			tableLayoutPanel2.SuspendLayout();
 			SuspendLayout();
@@ -56,7 +56,7 @@
 			// label1
 			// 
 			label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-			label1.Font = new Font("Segoe UI", 40F);
+			label1.Font = new Font("Segoe UI", 30F);
 			label1.Location = new Point(101, 0);
 			label1.Name = "label1";
 			label1.Size = new Size(200, 226);
@@ -68,7 +68,7 @@
 			// label2
 			// 
 			label2.Anchor = AnchorStyles.None;
-			label2.Font = new Font("Segoe UI", 40F);
+			label2.Font = new Font("Segoe UI", 30F);
 			label2.Location = new Point(51, 0);
 			label2.Name = "label2";
 			label2.Size = new Size(300, 225);
@@ -91,16 +91,6 @@
 			tableLayoutPanel2.Size = new Size(402, 226);
 			tableLayoutPanel2.TabIndex = 1;
 			// 
-			// button1
-			// 
-			button1.Location = new Point(512, 109);
-			button1.Name = "button1";
-			button1.Size = new Size(94, 29);
-			button1.TabIndex = 2;
-			button1.Text = "button1";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
-			// 
 			// button2
 			// 
 			button2.Location = new Point(512, 316);
@@ -111,13 +101,23 @@
 			button2.UseVisualStyleBackColor = true;
 			button2.Click += button2_Click;
 			// 
+			// listBox1
+			// 
+			listBox1.FormattingEnabled = true;
+			listBox1.Items.AddRange(new object[] { "Rock", "Paper", "Scissors" });
+			listBox1.Location = new Point(480, 54);
+			listBox1.Name = "listBox1";
+			listBox1.Size = new Size(150, 104);
+			listBox1.TabIndex = 4;
+			listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(689, 450);
+			Controls.Add(listBox1);
 			Controls.Add(button2);
-			Controls.Add(button1);
 			Controls.Add(tableLayoutPanel2);
 			Controls.Add(tableLayoutPanel1);
 			Name = "Form1";
@@ -133,7 +133,7 @@
 		private Label label1;
 		private Label label2;
 		private TableLayoutPanel tableLayoutPanel2;
-		private Button button1;
 		private Button button2;
+		private ListBox listBox1;
 	}
 }
