@@ -34,6 +34,7 @@
 			tableLayoutPanel2 = new TableLayoutPanel();
 			button2 = new Button();
 			listBox1 = new ListBox();
+			button1 = new Button();
 			tableLayoutPanel1.SuspendLayout();
 			tableLayoutPanel2.SuspendLayout();
 			SuspendLayout();
@@ -111,11 +112,22 @@
 			listBox1.TabIndex = 4;
 			listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
 			// 
+			// button1
+			// 
+			button1.Location = new Point(485, 202);
+			button1.Name = "button1";
+			button1.Size = new Size(145, 64);
+			button1.TabIndex = 5;
+			button1.Text = "End of the game?";
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(689, 450);
+			Controls.Add(button1);
 			Controls.Add(listBox1);
 			Controls.Add(button2);
 			Controls.Add(tableLayoutPanel2);
@@ -135,5 +147,6 @@
 		private TableLayoutPanel tableLayoutPanel2;
 		private Button button2;
 		private ListBox listBox1;
+		private Button button1;
 	}
 }
