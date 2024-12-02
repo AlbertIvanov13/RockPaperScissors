@@ -1,3 +1,7 @@
+using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
+using static System.Net.WebRequestMethods;
+
 namespace RockPaperScissorsForm
 {
 	public partial class Form1 : Form
@@ -43,15 +47,24 @@ namespace RockPaperScissorsForm
 		{
 			if (listBox1.SelectedItem == "Rock")
 			{
-				label1.Text = "Rock";
+				pictureBox1.Visible = true;
+				pictureBox2.Visible = false;
+				pictureBox3.Visible = false;
+				pictureBox1.BackColor = Color.DodgerBlue;
 			}
 			else if (listBox1.SelectedItem == "Paper")
 			{
-				label1.Text = "Paper";
+				pictureBox1.Visible = false;
+				pictureBox2.Visible = true;
+				pictureBox3.Visible = false;
+				pictureBox2.BackColor = Color.DodgerBlue;
 			}
 			else if (listBox1.SelectedItem == "Scissors")
 			{
-				label1.Text = "Scissors";
+				pictureBox1.Visible = false;
+				pictureBox2.Visible = false;
+				pictureBox3.Visible = true;
+				pictureBox3.BackColor = Color.DodgerBlue;
 			}
 		}
 
@@ -64,6 +77,93 @@ namespace RockPaperScissorsForm
 				int element = randomElement.Next(elements2.Count);
 				string randomString = elements2[element];
 				label2.Text = randomString;
+				if (randomString == "Rock")
+				{
+					if (listBox1.SelectedItem == "Rock")
+					{
+						pictureBox1.Visible = true;
+						pictureBox2.Visible = false;
+						pictureBox3.Visible = false;
+						pictureBox5.Visible = false;
+						pictureBox6.Visible = false;
+					}
+					if (listBox1.SelectedItem == "Paper")
+					{
+						pictureBox1.Visible = false;
+						pictureBox2.Visible = true;
+						pictureBox3.Visible = false;
+						pictureBox5.Visible = false;
+						pictureBox6.Visible = false;
+					}
+					if (listBox1.SelectedItem == "Scissors")
+					{
+						pictureBox1.Visible = false;
+						pictureBox2.Visible = false;
+						pictureBox3.Visible = true;
+						pictureBox5.Visible = false;
+						pictureBox6.Visible = false;
+					}
+					pictureBox4.Visible = true;
+					pictureBox4.BackColor = Color.Red;
+				}
+				if (randomString == "Paper")
+				{
+					if (listBox1.SelectedItem == "Rock")
+					{
+						pictureBox1.Visible = true;
+						pictureBox2.Visible = false;
+						pictureBox3.Visible = false;
+						pictureBox4.Visible = false;
+						pictureBox6.Visible = false;
+					}
+					if (listBox1.SelectedItem == "Paper")
+					{
+						pictureBox1.Visible = false;
+						pictureBox2.Visible = true;
+						pictureBox3.Visible = false;
+						pictureBox4.Visible = false;
+						pictureBox6.Visible = false;
+					}
+					if (listBox1.SelectedItem == "Scissors")
+					{
+						pictureBox1.Visible = false;
+						pictureBox2.Visible = false;
+						pictureBox3.Visible = true;
+						pictureBox4.Visible = false;
+						pictureBox6.Visible = false;
+					}
+					pictureBox5.Visible = true;
+					pictureBox5.BackColor = Color.Red;
+				}
+				if (randomString == "Scissors")
+				{
+					if (listBox1.SelectedItem == "Rock")
+					{
+						pictureBox1.Visible = true;
+						pictureBox2.Visible = false;
+						pictureBox3.Visible = false;
+						pictureBox4.Visible = false;
+						pictureBox5.Visible = false;
+					}
+					if (listBox1.SelectedItem == "Paper")
+					{
+						pictureBox1.Visible = false;
+						pictureBox2.Visible = true;
+						pictureBox3.Visible = false;
+						pictureBox4.Visible = false;
+						pictureBox5.Visible = false;
+					}
+					if (listBox1.SelectedItem == "Scissors")
+					{
+						pictureBox1.Visible = false;
+						pictureBox2.Visible = false;
+						pictureBox3.Visible = true;
+						pictureBox4.Visible = false;
+						pictureBox5.Visible = false;
+					}
+					pictureBox6.Visible = true;
+					pictureBox6.BackColor = Color.Red;
+				}
 				WinCheck();
 				isTrue = false;
 			}
@@ -71,41 +171,41 @@ namespace RockPaperScissorsForm
 
 		private void WinCheck()
 		{
-			if (label1.Text == "Rock" && label2.Text == "Scissors")
+			if (listBox1.SelectedItem == "Rock" && label2.Text == "Scissors")
 			{
 				MessageBox.Show("Player 1 win!");
 			}
-			else if (label1.Text == "Rock" && label2.Text == "Paper")
+			else if (listBox1.SelectedItem == "Rock" && label2.Text == "Paper")
 			{
 				MessageBox.Show("Player 2 win!");
 			}
-			else if (label1.Text == "Rock" && label2.Text == "Rock")
+			else if (listBox1.SelectedItem == "Rock" && label2.Text == "Rock")
 			{
 				MessageBox.Show("Tie!");
 			}
 
-			if (label1.Text == "Paper" && label2.Text == "Rock")
+			if (listBox1.SelectedItem == "Paper" && label2.Text == "Rock")
 			{
 				MessageBox.Show("Player 1 win!");
 			}
-			else if (label1.Text == "Paper" && label2.Text == "Scissors")
+			else if (listBox1.SelectedItem == "Paper" && label2.Text == "Scissors")
 			{
 				MessageBox.Show("Player 2 win!");
 			}
-			else if (label1.Text == "Paper" && label2.Text == "Paper")
+			else if (listBox1.SelectedItem == "Paper" && label2.Text == "Paper")
 			{
 				MessageBox.Show("Tie!");
 			}
 
-			if (label1.Text == "Scissors" && label2.Text == "Paper")
+			if (listBox1.SelectedItem == "Scissors" && label2.Text == "Paper")
 			{
 				MessageBox.Show("Player 1 win!");
 			}
-			else if (label1.Text == "Scissors" && label2.Text == "Rock")
+			else if (listBox1.SelectedItem == "Scissors" && label2.Text == "Rock")
 			{
 				MessageBox.Show("Player 2 win!");
 			}
-			else if (label1.Text == "Scissors" && label2.Text == "Scissors")
+			else if (listBox1.SelectedItem == "Scissors" && label2.Text == "Scissors")
 			{
 				MessageBox.Show("Tie!");
 			}
