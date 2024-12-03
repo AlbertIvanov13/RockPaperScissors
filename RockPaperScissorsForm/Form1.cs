@@ -11,40 +11,25 @@ namespace RockPaperScissorsForm
 			InitializeComponent();
 		}
 
-		List<string> elements1 = new List<string> { "Rock", "Paper", "Scissors" };
-		List<string> elements2 = new List<string> { "Rock", "Paper", "Scissors" };
+		//Creating a list of elements
+		List<string> elements = new List<string> { "Rock", "Paper", "Scissors" };
+
+		//Coloring the Player1's field background
 		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
 		{
 			tableLayoutPanel1.BackColor = Color.Blue;
 		}
 
+		//Coloring the Player2's field background
 		private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
 		{
 			tableLayoutPanel2.BackColor = Color.Red;
 		}
 
-		private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
+		//Selecting items from the list box
 		private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 		{
+			//If the selected item is Rock, a picture box with rock shows on Player1's field
 			if (listBox1.SelectedItem == "Rock")
 			{
 				pictureBox1.Visible = true;
@@ -52,6 +37,7 @@ namespace RockPaperScissorsForm
 				pictureBox3.Visible = false;
 				pictureBox1.BackColor = Color.DodgerBlue;
 			}
+			//If the selected item is Paper, a picture box with paper shows on Player1's field
 			else if (listBox1.SelectedItem == "Paper")
 			{
 				pictureBox1.Visible = false;
@@ -59,6 +45,7 @@ namespace RockPaperScissorsForm
 				pictureBox3.Visible = false;
 				pictureBox2.BackColor = Color.DodgerBlue;
 			}
+			//If the selected item is Scissors, a picture box with scissors shows on Player1's field
 			else if (listBox1.SelectedItem == "Scissors")
 			{
 				pictureBox1.Visible = false;
@@ -68,14 +55,15 @@ namespace RockPaperScissorsForm
 			}
 		}
 
+		//Generating random element from the list
 		private void button2_Click(object sender, EventArgs e)
 		{
 			bool isTrue = true;
 			if (isTrue)
 			{
 				Random randomElement = new Random();
-				int element = randomElement.Next(elements2.Count);
-				string randomString = elements2[element];
+				int element = randomElement.Next(elements.Count);
+				string randomString = elements[element];
 				label2.Text = randomString;
 				if (randomString == "Rock")
 				{
@@ -169,6 +157,7 @@ namespace RockPaperScissorsForm
 			}
 		}
 
+		//Creating a method which is checking is there a winning player
 		private void WinCheck()
 		{
 			if (listBox1.SelectedItem == "Rock" && label2.Text == "Scissors")
@@ -211,6 +200,7 @@ namespace RockPaperScissorsForm
 			}
 		}
 
+		//Creating a button for ending the game
 		private void button1_Click(object sender, EventArgs e)
 		{
 			Environment.Exit(0);

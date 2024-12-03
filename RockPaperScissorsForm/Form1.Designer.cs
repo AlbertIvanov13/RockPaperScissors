@@ -67,7 +67,6 @@
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
 			tableLayoutPanel1.Size = new Size(402, 226);
 			tableLayoutPanel1.TabIndex = 0;
-			tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
 			// 
 			// label1
 			// 
@@ -79,7 +78,6 @@
 			label1.TabIndex = 0;
 			label1.Text = "?";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
-			label1.Click += label1_Click;
 			// 
 			// label2
 			// 
@@ -91,7 +89,6 @@
 			label2.TabIndex = 0;
 			label2.Text = "?";
 			label2.TextAlign = ContentAlignment.MiddleCenter;
-			label2.Click += label2_Click;
 			// 
 			// tableLayoutPanel2
 			// 
